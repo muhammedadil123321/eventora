@@ -38,3 +38,29 @@ export const deleteVendor = async (id) => {
   const response = await api.delete(`/vendors/${id}`);
   return response.data;
 };
+
+// GET ALL CUSTOMERS
+export const getCustomers = async (params = {}) => {
+  const response = await api.get("/customers", { params });
+  return response.data;
+};
+
+// GET SINGLE CUSTOMER
+export const getCustomerById = async (id) => {
+  const response = await api.get(`/customers/${id}`);
+  return response.data;
+};
+
+// BLOCK / UNBLOCK CUSTOMER
+export const toggleCustomerStatus = async (id) => {
+  const response = await api.put(
+    `/customers/${id}/toggle-status`
+  );
+  return response.data;
+};
+
+// PERMANENT DELETE CUSTOMER
+export const deleteCustomer = async (id) => {
+  const response = await api.delete(`/customers/${id}`);
+  return response.data;
+};

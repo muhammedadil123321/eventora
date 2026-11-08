@@ -5,6 +5,8 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const vendorRoutes = require("./routes/vendorRoutes");
+const customerRoutes = require("./routes/customerRoutes");
+
 const testEmailRoutes = require("./routes/testEmailRoutes");
 
 
@@ -26,6 +28,7 @@ app.get("/", (req, res) => {
 // API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/vendors", vendorRoutes);
+app.use("/api/customers", customerRoutes);
 
 // Global Error Handler
 app.use((err, req, res, next) => {
