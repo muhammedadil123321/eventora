@@ -26,7 +26,7 @@ import NotFound from "../components/NotFound";
 import Bookings from "../modules/admin/pages/Bookings";
 import Customers from "../modules/admin/pages/Customers";
 import Quotations from "../modules/admin/pages/Quotations";
-import Packages from "../modules/admin/pages/Packages";
+
 import Vendors from "../modules/admin/pages/Vendors";
 import VendorApplications from "../modules/admin/pages/VendorApplications";
 import VendorAssignments from "../modules/admin/pages/VendorAssignments";
@@ -34,6 +34,12 @@ import Payments from "../modules/admin/pages/Payments";
 import EventTracking from "../modules/admin/pages/EventTracking";
 import Expenses from "../modules/admin/pages/Expenses";
 import Reports from "../modules/admin/pages/Reports";
+import Events from "../modules/admin/pages/Events";
+import ChooseEvents from "../modules/customer/pages/ChooseEvents";
+import EventPackages from "../modules/customer/pages/EventPackages";
+import EventDetails from "../modules/customer/pages/EventDetails";
+
+
 
 
 export default function AppRoutes() {
@@ -53,7 +59,7 @@ export default function AppRoutes() {
           <Route path="bookings" element={<Bookings />} />
           <Route path="customers" element={<Customers />} />
           <Route path="quotations" element={<Quotations />} />
-          <Route path="packages" element={<Packages />} />
+          <Route path="packages" element={<Events />} />
           <Route path="vendors" element={<Vendors />} />
           <Route path="vendor-applications" element={<VendorApplications />} />
           <Route path="vendor-assignments" element={<VendorAssignments />} />
@@ -65,7 +71,18 @@ export default function AppRoutes() {
         </Route>
 
         {/* Customer */}
-        <Route path="/customer" element={<CustomerHome />} />
+    <Route path="/customer" element={<CustomerHome />} />
+<Route path="/customer/events" element={<ChooseEvents />} />
+
+<Route
+  path="/customer/events/:eventId/packages"
+  element={<EventPackages />}
+/>
+
+<Route
+  path="/customer/events/:eventId/details"
+  element={<EventDetails />}
+/>
         <Route path="/customer/signup" element={<CustomerSignup />} />
 
         {/* Vendor */}
